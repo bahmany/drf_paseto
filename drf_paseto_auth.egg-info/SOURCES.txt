@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+drf_paseto_auth/__init__.py
+drf_paseto_auth/authentication.py
+drf_paseto_auth.egg-info/PKG-INFO
+drf_paseto_auth.egg-info/SOURCES.txt
+drf_paseto_auth.egg-info/dependency_links.txt
+drf_paseto_auth.egg-info/requires.txt
+drf_paseto_auth.egg-info/top_level.txt
