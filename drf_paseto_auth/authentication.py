@@ -1,3 +1,5 @@
+# drf_paseto_auth/authentication.py
+
 import paseto
 from datetime import datetime, timedelta
 from django.conf import settings
