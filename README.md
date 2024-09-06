@@ -1,20 +1,20 @@
-## Installation Guide for `drf-paseto-auth`
+## Installation Guide for `drf-paseto`
 
-`drf-paseto-auth` is a Django REST Framework authentication backend that uses PASETO (Platform-Agnostic Security Tokens) for secure authentication.
+`drf-paseto` is a Django REST Framework authentication backend that uses PASETO (Platform-Agnostic Security Tokens) for secure authentication.
 
 ### Step 1: Install the Package
 
 First, you need to install the package. If the package is published on PyPI, you can install it using `pip`. Otherwise, if you're installing it from a local build, follow the steps below.
 
 ```bash
-pip install drf-paseto-auth
+pip install drf_paseto
 ```
 
 If you are installing it from a local repository, clone the repository and install it:
 
 ```bash
-git clone https://github.com/yourusername/drf-paseto-auth.git
-cd drf-paseto-auth
+git clone https://github.com/bahmany/drf_paseto.git
+cd drf-paseto
 pip install .
 ```
 
@@ -25,7 +25,7 @@ Add `drf_paseto_auth` to the `INSTALLED_APPS` in your Django project's `settings
 ```python
 INSTALLED_APPS = [
     ...
-    'drf_paseto_auth',
+    'drf_paseto',
     ...
 ]
 ```
@@ -61,21 +61,22 @@ from django.contrib.auth import authenticate
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from drf_paseto_auth.authentication import PasetoAuthentication
+from drf_paseto.authentication import PasetoAuthentication
+
 
 class LoginView(APIView):
-    authentication_classes = []  # No authentication needed for login
+   authentication_classes = []  # No authentication needed for login
 
-    def post(self, request):
-        username = request.data.get('username')
-        password = request.data.get('password')
-        user = authenticate(username=username, password=password)
+   def post(self, request):
+      username = request.data.get('username')
+      password = request.data.get('password')
+      user = authenticate(username=username, password=password)
 
-        if user is not None:
-            token = PasetoAuthentication.generate_token(user)
-            return Response({'token': token}, status=status.HTTP_200_OK)
-        else:
-            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+      if user is not None:
+         token = PasetoAuthentication.generate_token(user)
+         return Response({'token': token}, status=status.HTTP_200_OK)
+      else:
+         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 ```
 
 ### Step 6: Add URLs for the Login View
@@ -129,5 +130,5 @@ class ProtectedView(APIView):
 
 ### Conclusion
 
-By following these steps, you have successfully installed and configured `drf-paseto-auth` for PASETO-based authentication in your Django REST Framework project. This setup ensures a more secure token-based authentication mechanism compared to JWT.
+By following these steps, you have successfully installed and configured `drf-paseto` for PASETO-based authentication in your Django REST Framework project. This setup ensures a more secure token-based authentication mechanism compared to JWT.
 

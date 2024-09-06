@@ -3,14 +3,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='drf-paseto-auth',
+    name='drf_paseto',
     version='0.1.0',
     description='PASETO Authentication for Django REST Framework',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='Mohammad Reza Bahmani',
     author_email='bahmanymb@gmail.com',
-    url='https://github.com/bahmany/drf-paseto',  # Change this to your repository URL
+    url='https://github.com/bahmany/drf_paseto',  # Change this to your repository URL
     packages=find_packages(),
     install_requires=[
         'Django>=3.0',
