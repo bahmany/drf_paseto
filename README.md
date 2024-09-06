@@ -20,7 +20,7 @@ pip install .
 
 ### Step 2: Add the Package to Your Installed Apps
 
-Add `drf_paseto_auth` to the `INSTALLED_APPS` in your Django project's `settings.py` file:
+Add `drf_paseto` to the `INSTALLED_APPS` in your Django project's `settings.py` file:
 
 ```python
 INSTALLED_APPS = [
@@ -37,7 +37,7 @@ Update the `REST_FRAMEWORK` settings in your `settings.py` file to use `PasetoAu
 ```python
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'drf_paseto_auth.authentication.PasetoAuthentication',
+        'drf_paseto.authentication.PasetoAuthentication',
     ),
 }
 ```

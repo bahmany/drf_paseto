@@ -1,4 +1,4 @@
-# drf_paseto_auth/authentication.py
+# drf_paseto/authentication.py
 
 import paseto
 from datetime import datetime, timedelta
